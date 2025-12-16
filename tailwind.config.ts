@@ -6,11 +6,46 @@ export default {
   theme: {
     extend: {
       borderRadius: {
-        lg: ".5625rem", /* 9px */
-        md: ".375rem", /* 6px */
-        sm: ".1875rem", /* 3px */
+        lg: ".75rem", /* 12px */
+        md: ".5rem", /* 8px */
+        sm: ".25rem", /* 4px */
+        xl: "1rem", /* 16px */
+        "2xl": "1.5rem", /* 24px */
       },
       colors: {
+        // Pastel color cards from reference image
+        pastel: {
+          lavender: {
+            DEFAULT: "hsl(270 60% 96%)",
+            border: "hsl(270 40% 90%)",
+            foreground: "hsl(270 60% 30%)",
+          },
+          mint: {
+            DEFAULT: "hsl(160 50% 95%)",
+            border: "hsl(160 40% 88%)",
+            foreground: "hsl(160 50% 25%)",
+          },
+          peach: {
+            DEFAULT: "hsl(25 80% 94%)",
+            border: "hsl(25 60% 88%)",
+            foreground: "hsl(25 70% 30%)",
+          },
+          cream: {
+            DEFAULT: "hsl(45 70% 95%)",
+            border: "hsl(45 50% 88%)",
+            foreground: "hsl(45 60% 28%)",
+          },
+          sky: {
+            DEFAULT: "hsl(220 70% 96%)",
+            border: "hsl(220 50% 90%)",
+            foreground: "hsl(220 60% 30%)",
+          },
+          rose: {
+            DEFAULT: "hsl(350 60% 96%)",
+            border: "hsl(350 40% 90%)",
+            foreground: "hsl(350 50% 30%)",
+          },
+        },
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
