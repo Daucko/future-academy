@@ -1,0 +1,17 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/activities/page": "app/activities/page.js",
+  "/analytics/page": "app/analytics/page.js",
+  "/assignments/page": "app/assignments/page.js",
+  "/attendance/page": "app/attendance/page.js",
+  "/class-preparation/page": "app/class-preparation/page.js",
+  "/exams/page": "app/exams/page.js",
+  "/messages/page": "app/messages/page.js",
+  "/news/page": "app/news/page.js",
+  "/page": "app/page.js",
+  "/reports/page": "app/reports/page.js",
+  "/schedule/page": "app/schedule/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/students/page": "app/students/page.js",
+  "/whats-new/page": "app/whats-new/page.js"
+}
