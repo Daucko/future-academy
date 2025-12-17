@@ -66,6 +66,8 @@ model Student {
 
   class      Class?       @relation(fields: [classId], references: [id])
   attendance Attendance[]
+  examResults ExamResult[]
+  submissions AssignmentSubmission[]
 
   @@map("students")
 }
@@ -85,6 +87,7 @@ model Exam {
   createdAt    DateTime  @default(now())
 
   class Class @relation(fields: [classId], references: [id])
+  results ExamResult[]
 
   @@map("exams")
 }
@@ -117,6 +120,7 @@ model Assignment {
   createdAt   DateTime @default(now())
 
   class Class @relation(fields: [classId], references: [id])
+  submissions AssignmentSubmission[]
 
   @@map("assignments")
 }
@@ -210,4 +214,36 @@ model LessonPlan {
   teacher User? @relation(fields: [teacherId], references: [id])
 
   @@map("lesson_plans")
+}
+
+model ExamResult {
+  id        String   @id @default(uuid())
+  examId    String
+  studentId String
+  score     Int
+  grade     String?
+  feedback  String?
+  gradedAt  DateTime @default(now())
+
+  exam    Exam    @relation(fields: [examId], references: [id])
+  student Student @relation(fields: [studentId], references: [id])
+
+  @@map("exam_results")
+}
+
+model AssignmentSubmission {
+  id             String   @id @default(uuid())
+  assignmentId   String
+  studentId      String
+  submissionDate DateTime @default(now())
+  content        String?
+  fileUrl        String?
+  grade          Int?
+  feedback       String?
+  status         String?  @default("submitted") // submitted, graded, late
+
+  assignment Assignment @relation(fields: [assignmentId], references: [id])
+  student    Student    @relation(fields: [studentId], references: [id])
+
+  @@map("assignment_submissions")
 }
