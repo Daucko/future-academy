@@ -22,7 +22,8 @@ import {
     Trash2,
     MapPin,
     Clock,
-    PartyPopper
+    PartyPopper,
+    MoreVertical
 } from "lucide-react";
 import {
     DropdownMenu,
@@ -49,11 +50,10 @@ export default function ActivitiesClient({ initialActivities }: { initialActivit
         const data = {
             title: formData.get("title") as string,
             description: formData.get("description") as string,
-            date: formData.get("date") as string,
-            time: formData.get("time") as string,
+            activityDate: formData.get("date") as string,
+            startTime: formData.get("time") as string,
             location: formData.get("location") as string,
-            organizer: "School Board", // Hardcoded
-            type: "Event" // Hardcoded or select
+            category: "Event",
         };
 
         const res = await createSchoolActivity(data);
