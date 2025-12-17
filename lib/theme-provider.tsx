@@ -28,9 +28,17 @@ export function ThemeProvider({
   storageKey = "school-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem(storageKey) as Theme;
+      if (storedTheme) {
+        setTheme(storedTheme);
+      }
+    }
+  }, [storageKey]);
+
 
   useEffect(() => {
     const root = window.document.documentElement;
