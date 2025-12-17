@@ -38,7 +38,6 @@ export async function getClass(id: string) {
                 teacher: true,
                 students: true,
                 exams: true,
-                presents: true, // Renamed from attendance potentially? No, relation is attendance
                 attendance: true,
                 assignments: true,
                 schedules: true

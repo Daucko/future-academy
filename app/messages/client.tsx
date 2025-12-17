@@ -84,10 +84,11 @@ export default function MessagesClient({ initialMessages }: { initialMessages: a
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const data = {
-            sender: "Me", // Hardcoded for now until Auth
-            recipient: formData.get("recipient") as string,
+            senderId: "current-user-id", // Hardcoded for now until Auth
+            recipientId: formData.get("recipient") as string,
             subject: formData.get("subject") as string,
             content: formData.get("message") as string,
+            isRead: false,
         };
 
         const res = await createMessage(data);
@@ -131,7 +132,7 @@ export default function MessagesClient({ initialMessages }: { initialMessages: a
                                     </SelectTrigger>
                                     <SelectContent>
                                         {recipients.map((r) => (
-                                            <SelectItem key={r.id} value={r.name}>
+                                            <SelectItem key={r.id} value={r.id}>
                                                 {r.name} ({r.role})
                                             </SelectItem>
                                         ))}
@@ -193,8 +194,8 @@ export default function MessagesClient({ initialMessages }: { initialMessages: a
                                 <div
                                     key={message.id}
                                     className={`p-4 cursor-pointer transition-colors ${selectedMessage?.id === message.id
-                                            ? "bg-accent"
-                                            : "hover:bg-muted/50"
+                                        ? "bg-accent"
+                                        : "hover:bg-muted/50"
                                         } ${!message.isRead ? "bg-primary/5" : ""}`}
                                     onClick={() => {
                                         setSelectedMessage(message);

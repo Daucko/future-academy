@@ -56,9 +56,7 @@ export default function NewsClient({ initialNews }: { initialNews: any[] }) {
             title: formData.get("title") as string,
             content: formData.get("content") as string,
             category: formData.get("category") as string,
-            author: "Admin", // Hardcoded
-            date: new Date(),
-            priority: "Normal"
+            isPublished: true,
         };
 
         const res = await createSchoolNews(data);

@@ -59,7 +59,7 @@ interface Exam {
     startTime: string;
     endTime?: string | null;
     confirmed: boolean;
-    studentCount?: number;
+    studentCount?: number | null;
     class?: { className: string; grade: number } | null;
 }
 
@@ -126,7 +126,7 @@ function ExamCard({ exam }: ExamCardProps) {
     );
 }
 
-export default function ExamsClient({ initialExams }: { initialExams: any[] }) {
+export default function ExamsClient({ initialExams }: { initialExams: (Omit<Exam, "examDate"> & { examDate: string | Date })[] }) {
     const [date, setDate] = useState<Date | undefined>(new Date());
     const [selectedMonth, setSelectedMonth] = useState("Feb");
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
