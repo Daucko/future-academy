@@ -1,5 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/class-preparation/page": "app/class-preparation/page.js",
-  "/attendance/page": "app/attendance/page.js"
+  "/settings/page": "app/settings/page.js"
 }
