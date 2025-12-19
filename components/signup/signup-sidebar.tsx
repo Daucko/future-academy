@@ -57,7 +57,7 @@ export function SignUpSidebar() {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80')`,
+              backgroundImage: `url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&auto=format&fit=crop')`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent"></div>

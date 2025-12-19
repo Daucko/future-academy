@@ -1,6 +1,6 @@
-import { SignUpHeader } from '@/components/signup-header';
-import { SignUpForm } from '@/components/signup-form';
-import { SignUpSidebar } from '@/components/signup-sidebar';
+import { SignUpHeader } from '@/components/signup/signup-header';
+import { SignUpForm } from '@/components/signup/signup-form';
+import { SignUpSidebar } from '@/components/signup/signup-sidebar';
 
 export default function SignUpPage() {
   return (
