@@ -1,5 +1,5 @@
-import { SignInForm } from '@/components/signin-form';
-import { SignInSidebar } from '@/components/signin-sidebar';
+import { SignInForm } from '@/components/signin/signin-form';
+import { SignInSidebar } from '@/components/signin/signin-sidebar';
 
 export default function SignInPage() {
   return (
