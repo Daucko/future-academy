@@ -121,7 +121,7 @@ export function SignInForm() {
         <p className="text-sm text-muted-foreground">
           New to the school?{' '}
           <Link
-            href="#"
+            href="/signup"
             className="font-bold text-primary hover:text-primary-hover transition-colors"
           >
             Create New Account

@@ -44,7 +44,7 @@ export function Header() {
             </nav>
             <div className="h-6 w-px bg-slate-200"></div>
             <Link
-              href="#"
+              href="/signin"
               className="text-sm font-semibold text-text-main hover:text-primary transition-colors flex items-center gap-2"
             >
               <CircleUser className="h-5 w-5" />
