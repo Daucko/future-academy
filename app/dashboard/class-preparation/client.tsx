@@ -48,16 +48,19 @@ export default function ClassPreparationClient({ initialPlans }: { initialPlans:
     async function handleAddPlan(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
+
+        const objectivesRaw = (formData.get("objectives") as string || "").trim();
+        const materialsRaw = (formData.get("materials") as string || "").trim();
+
         const data = {
+            classId: formData.get("classId") as string,
             subject: formData.get("subject") as string,
             topic: formData.get("topic") as string,
-            grade: parseInt(formData.get("grade") as string),
-            date: formData.get("date") as string,
+            lessonDate: formData.get("date") as string,
             duration: parseInt(formData.get("duration") as string),
-            objectives: (formData.get("objectives") as string).split('\n'),
-            materials: (formData.get("materials") as string)?.split('\n') || [],
-            activities: [], // Complex structure, simplifying for form
-            assessment: formData.get("assessment") as string || ""
+            objectives: objectivesRaw ? objectivesRaw : undefined,
+            materials: materialsRaw ? materialsRaw : undefined,
+            status: "draft"
         };
 
         const res = await createLessonPlan(data);
@@ -90,7 +93,7 @@ export default function ClassPreparationClient({ initialPlans }: { initialPlans:
                             <DialogTitle>Create Lesson Plan</DialogTitle>
                         </DialogHeader>
                         <form onSubmit={handleAddPlan} className="grid gap-4 py-4">
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-3 gap-4">
                                 <div className="grid gap-2">
                                     <Label htmlFor="subject">Subject</Label>
                                     <Input name="subject" required placeholder="e.g. Math" />
@@ -98,6 +101,10 @@ export default function ClassPreparationClient({ initialPlans }: { initialPlans:
                                 <div className="grid gap-2">
                                     <Label htmlFor="grade">Grade</Label>
                                     <Input name="grade" type="number" required placeholder="10" />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Label htmlFor="classId">Class ID</Label>
+                                    <Input name="classId" required placeholder="class id (e.g. cls_123)" />
                                 </div>
                             </div>
                             <div className="grid gap-2">
