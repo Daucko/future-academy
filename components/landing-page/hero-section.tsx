@@ -54,7 +54,7 @@ export function HeroSection() {
               <div className="absolute -right-4 -bottom-4 w-full h-full rounded-[2rem] border-2 border-primary/10 bg-purple-50 -z-10"></div>
               <div className="w-full aspect-[4/3] rounded-[2rem] overflow-hidden bg-slate-100 shadow-2xl shadow-purple-900/10 relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent z-10"></div>
-                <div className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80')]"></div>
+                <div className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrA1Fq9jPegj_lE3Lw86pkIo17fMzUGNi34Z96tDXI-MM2eeFf4tQDWcYIjCzE_OkuiR8V7RXpndlVPbMcYC6wAlS-zTZ4fTXNJeW-BHayYQLJyIML0UduKyPpF0oUYeCyfj83HN7qmDuTyfN6hYoi1E1EVYtIyTQTU9pX66tbBJ2ujRGySGxPMwgrXD2mpft-OTjqp0MdfVKpjFpzO-LiOkWuaDe9YvbUBuFmjp5TY4zraimQJ5ALp9JisifsBb38noUpNl_0ves')]"></div>
               </div>
               <div className="absolute bottom-6 left-6 z-20 bg-white/90 backdrop-blur-md border border-white/40 p-4 rounded-xl flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                 <div className="bg-primary/10 p-2 rounded-full text-primary">

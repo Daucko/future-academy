@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
       <Header />
-      <main>
+      <main className="">
         <HeroSection />
         <StatsSection />
         <JourneyTimeline />

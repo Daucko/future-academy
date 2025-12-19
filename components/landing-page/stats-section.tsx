@@ -27,7 +27,7 @@ export function StatsSection() {
       <div className="w-full max-w-7xl bg-surface border border-slate-100 rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-slate-100">
           {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col gap-2 p-4 md:pl-0">
+            <div key={index} className="flex flex-col gap-2 p-4 md:pl-4">
               <div className="flex items-center gap-3 justify-center md:justify-start">
                 <stat.icon className="text-primary text-3xl" />
                 <p className="text-primary font-bold text-sm uppercase tracking-wider">
