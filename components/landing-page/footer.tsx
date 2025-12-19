@@ -75,9 +75,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs">
-            © 2024 GreenValley Academy. All rights reserved.
-          </p>
+          <p className="text-xs">© 2024 Future Academy. All rights reserved.</p>
           <div className="flex gap-4">
             {['IG', 'FB', 'LN'].map((social) => (
               <Button
