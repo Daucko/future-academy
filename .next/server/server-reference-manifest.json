@@ -1,5 +1,50 @@
 {
-  "node": {},
+  "node": {
+    "4019f5bd262d0abf6c66c53c427da7fc08f7683bc4": {
+      "workers": {
+        "app/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Capp%5C%5Cactions%5C%5Cexams.ts%22%2C%5B%5B%224019f5bd262d0abf6c66c53c427da7fc08f7683bc4%22%2C%22createExam%22%5D%2C%5B%22406530780dc04814226303303df0afbe92dd3d04a2%22%2C%22getExams%22%5D%2C%5B%2240bcf2d3c5e3b7145f60d97646bd95bd147e352227%22%2C%22deleteExam%22%5D%2C%5B%22607f38a8ec03e35744d57c59e176ab8bd4e8cec435%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/exams/page": "rsc"
+      }
+    },
+    "406530780dc04814226303303df0afbe92dd3d04a2": {
+      "workers": {
+        "app/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Capp%5C%5Cactions%5C%5Cexams.ts%22%2C%5B%5B%224019f5bd262d0abf6c66c53c427da7fc08f7683bc4%22%2C%22createExam%22%5D%2C%5B%22406530780dc04814226303303df0afbe92dd3d04a2%22%2C%22getExams%22%5D%2C%5B%2240bcf2d3c5e3b7145f60d97646bd95bd147e352227%22%2C%22deleteExam%22%5D%2C%5B%22607f38a8ec03e35744d57c59e176ab8bd4e8cec435%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/exams/page": "rsc"
+      }
+    },
+    "40bcf2d3c5e3b7145f60d97646bd95bd147e352227": {
+      "workers": {
+        "app/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Capp%5C%5Cactions%5C%5Cexams.ts%22%2C%5B%5B%224019f5bd262d0abf6c66c53c427da7fc08f7683bc4%22%2C%22createExam%22%5D%2C%5B%22406530780dc04814226303303df0afbe92dd3d04a2%22%2C%22getExams%22%5D%2C%5B%2240bcf2d3c5e3b7145f60d97646bd95bd147e352227%22%2C%22deleteExam%22%5D%2C%5B%22607f38a8ec03e35744d57c59e176ab8bd4e8cec435%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/exams/page": "rsc"
+      }
+    },
+    "607f38a8ec03e35744d57c59e176ab8bd4e8cec435": {
+      "workers": {
+        "app/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Capp%5C%5Cactions%5C%5Cexams.ts%22%2C%5B%5B%224019f5bd262d0abf6c66c53c427da7fc08f7683bc4%22%2C%22createExam%22%5D%2C%5B%22406530780dc04814226303303df0afbe92dd3d04a2%22%2C%22getExams%22%5D%2C%5B%2240bcf2d3c5e3b7145f60d97646bd95bd147e352227%22%2C%22deleteExam%22%5D%2C%5B%22607f38a8ec03e35744d57c59e176ab8bd4e8cec435%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/exams/page": "rsc"
+      }
+    }
+  },
   "edge": {},
   "encryptionKey": "7R7BnYhFwMTasWbEObasU2VVe0VmEj83WUo2nCe/dEU="
 }

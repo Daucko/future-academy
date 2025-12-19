@@ -1,3 +1,5 @@
 {
+  "/exams/page": "app/exams/page.js",
+  "/page": "app/page.js",
   "/settings/page": "app/settings/page.js"
 }
