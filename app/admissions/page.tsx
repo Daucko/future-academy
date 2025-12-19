@@ -1,10 +1,10 @@
-import { AdmissionsHeader } from '@/components/admissions-header';
-import { AdmissionsHero } from '@/components/admissions-hero';
-import { AdmissionsProcess } from '@/components/admissions-process';
-import { AdmissionsDocuments } from '@/components/admissions-documents';
-import { AdmissionsForm } from '@/components/admissions-form';
-import { Footer } from '@/components/footer';
-import { FloatingChatButton } from '@/components/floating-chat-button';
+import { AdmissionsHeader } from '@/components/admissions/admissions-header';
+import { AdmissionsHero } from '@/components/admissions/admissions-hero';
+import { AdmissionsProcess } from '@/components/admissions/admissions-process';
+import { AdmissionsDocuments } from '@/components/admissions/admissions-documents';
+import { AdmissionsForm } from '@/components/admissions/admissions-form';
+import { Footer } from '@/components/landing-page/footer';
+import { FloatingChatButton } from '@/components/landing-page/floating-chat-button';
 
 export default function AdmissionsPage() {
   return (

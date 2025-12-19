@@ -30,7 +30,7 @@ export function Header() {
                 Academics
               </Link>
               <Link
-                href="#"
+                href="/admissions"
                 className="text-sm font-medium text-text-muted hover:text-primary transition-colors"
               >
                 Admissions
