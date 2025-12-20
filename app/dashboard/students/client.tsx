@@ -220,12 +220,15 @@ export default function StudentsClient({ initialStudents }: { initialStudents: a
     async function handleAddStudent(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
+        const dobRaw = formData.get("dateOfBirth") as string;
+
         const data = {
             firstName: formData.get("firstName") as string,
             lastName: formData.get("lastName") as string,
             email: formData.get("email") as string,
             studentId: "STD" + Math.floor(Math.random() * 10000), // simplistic ID generation
             grade: parseInt(formData.get("grade") as string),
+            dateOfBirth: dobRaw ? dobRaw : null,
             phone: formData.get("phone") as string,
             parentName: formData.get("parentName") as string,
             // Add other fields as needed
