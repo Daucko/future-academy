@@ -1,5 +1,5 @@
-import { getReports } from "@/app/dashboard/actions/reports";
-import { getStudents } from "@/app/dashboard/actions/students";
+import { getReports } from "@/server/reports";
+import { getStudents } from "@/server/students";
 import ReportsClient from "./client";
 
 export default async function ReportsPage() {

@@ -41,7 +41,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { createMessage } from "@/app/dashboard/actions/messages";
+import { createMessage } from "@/server/messages";
 import { useToast } from "@/hooks/use-toast";
 
 const recipients = [

@@ -1,4 +1,4 @@
-import { getAssignments } from "@/app/dashboard/actions/assignments";
+import { getAssignments } from "@/server/assignments";
 import AssignmentsClient from "./client";
 
 export default async function AssignmentsPage() {

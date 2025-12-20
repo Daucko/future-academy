@@ -41,7 +41,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { createStudent } from "@/app/dashboard/actions/students";
+import { createStudent } from "@/server/students";
 import { useToast } from "@/hooks/use-toast";
 
 interface Student {

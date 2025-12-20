@@ -42,7 +42,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { createAssignment } from '@/app/dashboard/actions/assignments';
+import { createAssignment } from '@/server/assignments';
 import { useToast } from '@/hooks/use-toast';
 
 const assignmentColors = [

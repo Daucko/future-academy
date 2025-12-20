@@ -39,7 +39,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { createReport } from "@/app/dashboard/actions/reports";
+import { createReport } from "@/server/reports";
 import { useToast } from "@/hooks/use-toast";
 
 // Mock student mapping if real students are missing or just for ID lookup

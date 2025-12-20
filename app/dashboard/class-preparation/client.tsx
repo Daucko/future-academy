@@ -32,7 +32,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-import { createLessonPlan } from '@/app/dashboard/actions/lesson-plans';
+import { createLessonPlan } from '@/server/lesson-plans';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ClassPreparationClient({

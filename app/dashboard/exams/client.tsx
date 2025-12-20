@@ -37,7 +37,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { createExam } from "@/app/dashboard/actions/exams";
+import { createExam } from "@/server/exams";
 import { useToast } from "@/hooks/use-toast";
 
 const examColors = [

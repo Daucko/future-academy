@@ -28,7 +28,7 @@ import {
     MapPin,
     User,
 } from "lucide-react";
-import { createSchedule } from "@/app/dashboard/actions/schedules";
+import { createSchedule } from "@/server/schedules";
 import { useToast } from "@/hooks/use-toast";
 
 const timeSlots = [

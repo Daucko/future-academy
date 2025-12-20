@@ -1,4 +1,4 @@
-import { getSchoolNews } from "@/app/dashboard/actions/news";
+import { getSchoolNews } from "@/server/news";
 import NewsClient from "./client";
 
 export default async function NewsPage() {

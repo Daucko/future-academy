@@ -34,7 +34,7 @@ import {
     ChevronLeft,
     ChevronRight,
 } from "lucide-react";
-import { createAttendance, updateAttendance } from "@/app/dashboard/actions/attendance";
+import { createAttendance, updateAttendance } from "@/server/attendance";
 import { useToast } from "@/hooks/use-toast";
 
 // Types

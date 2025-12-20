@@ -1,5 +1,5 @@
-import { getSchedules } from "@/app/dashboard/actions/schedules";
-import { getClasses } from "@/app/dashboard/actions/classes";
+import { getSchedules } from "@/server/schedules";
+import { getClasses } from "@/server/classes";
 import ScheduleClient from "./client";
 
 export default async function SchedulePage() {

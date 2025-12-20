@@ -1,4 +1,4 @@
-import { getExams } from "@/app/dashboard/actions/exams";
+import { getExams } from "@/server/exams";
 import ExamsClient from "./client";
 
 export default async function ExamsPage() {

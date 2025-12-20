@@ -37,7 +37,7 @@ import {
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
-import { createSchoolNews } from "@/app/dashboard/actions/news";
+import { createSchoolNews } from "@/server/news";
 import { useToast } from "@/hooks/use-toast";
 
 export default function NewsClient({ initialNews }: { initialNews: any[] }) {

@@ -32,7 +32,7 @@ import {
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
-import { createSchoolActivity } from "@/app/dashboard/actions/activities";
+import { createSchoolActivity } from "@/server/activities";
 import { useToast } from "@/hooks/use-toast";
 
 export default function ActivitiesClient({ initialActivities }: { initialActivities: any[] }) {

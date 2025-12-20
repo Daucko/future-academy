@@ -1,5 +1,5 @@
-import { getAttendance } from "@/app/dashboard/actions/attendance";
-import { getStudents } from "@/app/dashboard/actions/students";
+import { getAttendance } from "@/server/attendance";
+import { getStudents } from "@/server/students";
 import AttendanceClient from "./client";
 
 export default async function AttendancePage() {

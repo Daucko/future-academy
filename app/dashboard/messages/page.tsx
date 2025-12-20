@@ -1,4 +1,4 @@
-import { getMessages } from "@/app/dashboard/actions/messages";
+import { getMessages } from "@/server/messages";
 import MessagesClient from "./client";
 
 export default async function MessagesPage() {

@@ -1,4 +1,4 @@
-import { getSchoolActivities } from "@/app/dashboard/actions/activities";
+import { getSchoolActivities } from "@/server/activities";
 import ActivitiesClient from "./client";
 
 export default async function ActivitiesPage() {
