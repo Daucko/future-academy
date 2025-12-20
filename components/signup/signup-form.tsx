@@ -5,15 +5,61 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
-import { User, Badge, Mail, ArrowRight } from 'lucide-react';
+import { User, Badge, Mail, ArrowRight, Lock, Loader2 } from 'lucide-react';
+import { signUp } from '@/server/auth';
+import { useRouter } from 'next/navigation';
 
 export function SignUpForm() {
-  const [role, setRole] = useState('Parent');
+  const [role, setRole] = useState('Student');
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    idNumber: '',
+    email: '',
+    username: '',
+    password: '',
+    confirmPassword: '',
+  });
+  const router = useRouter();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
 
   const handleContinue = () => {
-    if (step < 3) {
+    if (step < 2) {
       setStep(step + 1);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    const result = await signUp({
+      fullName: formData.fullName,
+      email: formData.email,
+      username: formData.username,
+      password: formData.password,
+      role: role.toLowerCase(),
+    });
+
+    if (result?.error) {
+      setError(result.error);
+      setLoading(false);
+    } else {
+      router.push('/signin?registered=true');
     }
   };
 
@@ -31,16 +77,16 @@ export function SignUpForm() {
       <div className="space-y-3">
         <div className="flex justify-between items-end">
           <span className="text-xs font-bold uppercase tracking-wider text-primary">
-            Step {step} of 3
+            Step {step} of 2
           </span>
           <span className="text-xs font-medium text-muted-foreground">
-            Identity Verification
+            {step === 1 ? 'Identity Verification' : 'Account Security'}
           </span>
         </div>
         <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
           <div
             className="h-full bg-primary rounded-full shadow-[0_0_10px_rgba(139,92,246,0.5)]"
-            style={{ width: `${(step / 3) * 100}%` }}
+            style={{ width: `${(step / 2) * 100}%` }}
           ></div>
         </div>
       </div>
@@ -66,60 +112,158 @@ export function SignUpForm() {
         </div>
       </div>
 
-      <form
-        className="flex flex-col gap-5"
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <div className="space-y-2">
-          <Label htmlFor="fullname" className="ml-1">
-            Full Name
-          </Label>
-          <div className="relative group">
-            <User className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-            <Input
-              id="fullname"
-              placeholder="e.g. Jane Doe"
-              className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
-            />
+      <form className="flex flex-col gap-5" onSubmit={step === 1 ? (e) => { e.preventDefault(); handleContinue(); } : handleSubmit}>
+        {error && (
+          <div className="bg-destructive/10 border border-destructive/20 text-destructive text-sm p-3 rounded-xl">
+            {error}
           </div>
-        </div>
+        )}
 
-        <div className="space-y-2">
-          <Label htmlFor="id_number" className="ml-1">
-            Student / Staff ID
-          </Label>
-          <div className="relative group">
-            <Badge className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-            <Input
-              id="id_number"
-              placeholder="e.g. S-2023-001"
-              className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
-            />
-          </div>
-        </div>
+        {step === 1 && (
+          <>
+            <div className="space-y-2">
+              <Label htmlFor="fullName" className="ml-1">
+                Full Name
+              </Label>
+              <div className="relative group">
+                <User className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                <Input
+                  id="fullName"
+                  required
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  placeholder="e.g. Jane Doe"
+                  className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="email" className="ml-1">
-            Email Address
-          </Label>
-          <div className="relative group">
-            <Mail className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-            <Input
-              id="email"
-              type="email"
-              placeholder="name@school.edu"
-              className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
-            />
-          </div>
-        </div>
+            <div className="space-y-2">
+              <Label htmlFor="idNumber" className="ml-1">
+                Student / Staff ID
+              </Label>
+              <div className="relative group">
+                <Badge className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                <Input
+                  id="idNumber"
+                  required
+                  value={formData.idNumber}
+                  onChange={handleInputChange}
+                  placeholder="e.g. S-2023-001"
+                  className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
 
-        <Button
-          onClick={handleContinue}
-          className="mt-4 h-12 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] group"
-        >
-          <span>Continue Registration</span>
-          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Button>
+            <div className="space-y-2">
+              <Label htmlFor="email" className="ml-1">
+                Email Address
+              </Label>
+              <div className="relative group">
+                <Mail className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="name@school.edu"
+                  className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
+
+            <Button
+              type="submit"
+              className="mt-4 h-12 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] group"
+            >
+              <span>Continue Registration</span>
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </>
+        )}
+
+        {step === 2 && (
+          <>
+            <div className="space-y-2">
+              <Label htmlFor="username" className="ml-1">
+                Username
+              </Label>
+              <div className="relative group">
+                <User className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                <Input
+                  id="username"
+                  required
+                  value={formData.username}
+                  onChange={handleInputChange}
+                  placeholder="Choose a username"
+                  className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="password" className="ml-1">
+                Password
+              </Label>
+              <div className="relative group">
+                <Lock className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                <Input
+                  id="password"
+                  type="password"
+                  required
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  placeholder="Create a password"
+                  className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword" className="ml-1">
+                Confirm Password
+              </Label>
+              <div className="relative group">
+                <Lock className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                <Input
+                  id="confirmPassword"
+                  type="password"
+                  required
+                  value={formData.confirmPassword}
+                  onChange={handleInputChange}
+                  placeholder="Confirm your password"
+                  className="pl-12 h-12 bg-slate-50 border-slate-200 rounded-xl font-medium focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-4 mt-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setStep(1)}
+                className="flex-1 h-12 rounded-xl"
+              >
+                Back
+              </Button>
+              <Button
+                type="submit"
+                disabled={loading}
+                className="flex-[2] h-12 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] group"
+              >
+                {loading ? (
+                  <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                ) : (
+                  <>
+                    <span>Complete Sign Up</span>
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </>
+                )}
+              </Button>
+            </div>
+          </>
+        )}
       </form>
 
       <div className="relative flex py-6 items-center">
@@ -131,7 +275,6 @@ export function SignUpForm() {
       </div>
 
       <div className="flex justify-center gap-4">
-        {/* Google */}
         <Button
           variant="outline"
           size="icon"
@@ -142,7 +285,6 @@ export function SignUpForm() {
           </svg>
         </Button>
 
-        {/* Microsoft */}
         <Button
           variant="outline"
           size="icon"
@@ -153,7 +295,6 @@ export function SignUpForm() {
           </svg>
         </Button>
 
-        {/* Email */}
         <Button
           variant="outline"
           size="icon"
@@ -164,6 +305,13 @@ export function SignUpForm() {
       </div>
 
       <p className="text-xs text-center text-muted-foreground">
+        Already have an account?{' '}
+        <Link href="/signin" className="font-bold text-primary hover:underline">
+          Sign In
+        </Link>
+      </p>
+
+      <p className="text-xs text-center text-muted-foreground pt-4">
         Protected by reCAPTCHA and subject to the School{' '}
         <Link href="#" className="underline hover:text-primary">
           Privacy Policy

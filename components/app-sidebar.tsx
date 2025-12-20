@@ -21,6 +21,8 @@ import {
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { useSession, signOut } from "next-auth/react";
+import { LogOut } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -56,6 +58,7 @@ const settingsMenuItems = [
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   return (
     <Sidebar className="border-r border-sidebar-border">
@@ -165,24 +168,34 @@ export function AppSidebar() {
         <SidebarGroupLabel className="px-0 text-xs font-medium text-muted-foreground mb-2">
           Account
         </SidebarGroupLabel>
-        <div
-          className="flex items-center gap-3 rounded-lg p-2 hover-elevate cursor-pointer"
-          data-testid="user-profile-sidebar"
-        >
-          <Avatar className="h-9 w-9">
-            <AvatarImage src="" alt="User" />
-            <AvatarFallback className="bg-primary/10 text-primary text-sm font-medium">
-              AB
-            </AvatarFallback>
-          </Avatar>
-          <div className="flex flex-col">
-            <span className="text-sm font-medium" data-testid="text-username">
-              Amirbaqian
-            </span>
-            <span className="text-xs text-muted-foreground" data-testid="text-role">
-              Teacher
-            </span>
+        <div className="flex flex-col gap-2">
+          <div
+            className="flex items-center gap-3 rounded-lg p-2 hover:bg-muted/50 transition-colors"
+            data-testid="user-profile-sidebar"
+          >
+            <Avatar className="h-9 w-9">
+              <AvatarImage src={session?.user?.image || ""} alt={session?.user?.name || "User"} />
+              <AvatarFallback className="bg-primary/10 text-primary text-sm font-medium">
+                {session?.user?.name?.charAt(0) || "U"}
+              </AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col min-w-0">
+              <span className="text-sm font-medium truncate" data-testid="text-username">
+                {session?.user?.name || "Guest"}
+              </span>
+              <span className="text-xs text-muted-foreground capitalize" data-testid="text-role">
+                {(session?.user as any)?.role || "User"}
+              </span>
+            </div>
           </div>
+
+          <button
+            onClick={() => signOut({ callbackUrl: "/signin" })}
+            className="flex items-center gap-3 w-full p-2 text-sm font-medium text-muted-foreground hover:text-destructive hover:bg-destructive/5 rounded-lg transition-colors group"
+          >
+            <LogOut className="h-4 w-4 group-hover:text-destructive" />
+            <span>Sign Out</span>
+          </button>
         </div>
       </SidebarFooter>
     </Sidebar>

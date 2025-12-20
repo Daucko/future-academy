@@ -6,12 +6,40 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import Link from 'next/link';
-import { Eye, EyeOff, User, Lock, HelpCircle, ArrowRight } from 'lucide-react';
+import { Eye, EyeOff, User, Lock, HelpCircle, ArrowRight, Loader2 } from 'lucide-react';
+import { login } from '@/server/auth';
+import { useRouter } from 'next/navigation';
 
 export function SignInForm() {
   const [role, setRole] = useState('student');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+
+    try {
+      const result = await login({ email, password });
+      if (result?.error) {
+        setError(result.error);
+        setLoading(false);
+      } else {
+        router.push('/dashboard');
+      }
+    } catch (err) {
+      setError('An unexpected error occurred. Please try again.');
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-md flex flex-col gap-8 bg-white/50 backdrop-blur-sm p-8 rounded-2xl border border-white shadow-xl shadow-sky-100/50">
@@ -44,7 +72,12 @@ export function SignInForm() {
         </div>
       </div>
 
-      <form className="flex flex-col gap-5">
+      <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+        {error && (
+          <div className="bg-destructive/10 border border-destructive/20 text-destructive text-sm p-3 rounded-xl">
+            {error}
+          </div>
+        )}
         <div className="space-y-2">
           <Label htmlFor="email" className="ml-1">
             Email or Username
@@ -55,6 +88,8 @@ export function SignInForm() {
             </div>
             <Input
               id="email"
+              name="email"
+              required
               placeholder="student@school.edu"
               className="pl-11 py-3.5 rounded-xl border-slate-200 focus:ring-4 focus:ring-primary/10"
             />
@@ -71,6 +106,8 @@ export function SignInForm() {
             </div>
             <Input
               id="password"
+              name="password"
+              required
               type={showPassword ? 'text' : 'password'}
               placeholder="Enter your password"
               className="pl-11 pr-12 py-3.5 rounded-xl border-slate-200 focus:ring-4 focus:ring-primary/10"
@@ -111,9 +148,19 @@ export function SignInForm() {
           </Link>
         </div>
 
-        <Button className="mt-2 py-4 rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all hover:scale-[1.02] active:scale-[0.98] group">
-          <span>Sign In</span>
-          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+        <Button
+          type="submit"
+          disabled={loading}
+          className="mt-2 py-4 rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all hover:scale-[1.02] active:scale-[0.98] group"
+        >
+          {loading ? (
+            <Loader2 className="h-5 w-5 animate-spin mr-2" />
+          ) : (
+            <>
+              <span>Sign In</span>
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </>
+          )}
         </Button>
       </form>
 
