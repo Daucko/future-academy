@@ -16,7 +16,13 @@ export default auth((req) => {
         return NextResponse.next();
     }
 
-    if (!isLoggedIn && !isPublicRoute) {
+    // Define public routes clearly
+    const isPublicPath =
+        req.nextUrl.pathname === "/" ||
+        req.nextUrl.pathname.startsWith("/admissions") ||
+        req.nextUrl.pathname.startsWith("/about"); // Add more if needed
+
+    if (!isLoggedIn && !isPublicPath) {
         return NextResponse.redirect(new URL("/signin", req.nextUrl));
     }
 
