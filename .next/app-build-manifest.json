@@ -40,6 +40,36 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/admissions/page.js"
+    ],
+    "/student-dashboard/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/student-dashboard/layout.js"
+    ],
+    "/student-dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/student-dashboard/page.js"
+    ],
+    "/student-dashboard/courses/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/student-dashboard/courses/page.js"
+    ],
+    "/student-dashboard/timetable/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/student-dashboard/timetable/page.js"
+    ],
+    "/student-dashboard/exams/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/student-dashboard/exams/page.js"
+    ],
+    "/student-dashboard/messages/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/student-dashboard/messages/page.js"
     ]
   }
 }

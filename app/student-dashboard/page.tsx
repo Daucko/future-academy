@@ -37,7 +37,6 @@ export default function DashboardPage() {
                 day: 'numeric'
             }));
         };
-
         updateDateTime();
         const interval = setInterval(updateDateTime, 60000); // Update every minute
         return () => clearInterval(interval);
