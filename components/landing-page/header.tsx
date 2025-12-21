@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { School, Menu, CircleUser, LayoutDashboard } from 'lucide-react';
 import { auth } from '@/auth';
+import { MobileNav } from './mobile-nav';
 
 export async function Header() {
   const session = await auth();
@@ -67,9 +68,7 @@ export async function Header() {
               Apply Now
             </Button>
           </div>
-          <Button variant="ghost" size="icon" className="lg:hidden">
-            <Menu className="h-6 w-6" />
-          </Button>
+          <MobileNav session={session} />
         </div>
       </div>
     </header>
