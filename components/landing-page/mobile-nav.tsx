@@ -29,7 +29,7 @@ export function MobileNav({ session }: MobileNavProps) {
                     <span className="sr-only">Toggle menu</span>
                 </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] px-7">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] px-7 bg-white">
                 <SheetHeader className="mb-8">
                     <SheetTitle className="text-left flex items-center gap-3">
                         <div className="size-10 bg-purple-50 rounded-xl text-primary flex items-center justify-center">
