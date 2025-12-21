@@ -1,0 +1,250 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated-prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  fullName  String
+  email     String
+  role      String   @default("teacher")
+  avatarUrl String?
+  createdAt DateTime @default(now())
+
+  classesAsTeacher Class[]
+  schedules        Schedule[]
+  sentMessages     Message[]    @relation("SentMessages")
+  receivedMessages Message[]    @relation("ReceivedMessages")
+  schoolNews       SchoolNews[]
+  reports          Report[]
+  lessonPlans      LessonPlan[]
+
+  @@map("users")
+}
+
+model Class {
+  id          String  @id @default(uuid())
+  classNumber String
+  className   String
+  grade       Int
+  section     String?
+  teacherId   String?
+  colorTheme  String? @default("lavender")
+
+  teacher     User?        @relation(fields: [teacherId], references: [id])
+  students    Student[]
+  exams       Exam[]
+  attendance  Attendance[]
+  assignments Assignment[]
+  schedules   Schedule[]
+  lessonPlans LessonPlan[]
+
+  @@map("classes")
+}
+
+model Student {
+  id          String    @id @default(uuid())
+  studentId   String    @unique
+  firstName   String
+  lastName    String
+  email       String?
+  phone       String?
+  classId     String?
+  grade       Int
+  avatarUrl   String?
+  dateOfBirth DateTime? @db.Date
+  parentName  String?
+  parentPhone String?
+  address     String?
+  enrolledAt  DateTime  @default(now())
+
+  class       Class?                 @relation(fields: [classId], references: [id])
+  attendance  Attendance[]
+  examResults ExamResult[]
+  submissions AssignmentSubmission[]
+
+  @@map("students")
+}
+
+model Exam {
+  id           String   @id @default(uuid())
+  classId      String
+  examType     String
+  subject      String
+  examDate     DateTime @db.Date
+  startTime    String
+  endTime      String?
+  confirmed    Boolean  @default(false)
+  studentCount Int?     @default(0)
+  room         String?
+  notes        String?
+  createdAt    DateTime @default(now())
+
+  class   Class        @relation(fields: [classId], references: [id])
+  results ExamResult[]
+
+  @@map("exams")
+}
+
+model Attendance {
+  id           String   @id @default(uuid())
+  studentId    String
+  classId      String
+  date         DateTime @db.Date
+  status       String   @default("present")
+  checkInTime  String?
+  checkOutTime String?
+  notes        String?
+
+  student Student @relation(fields: [studentId], references: [id])
+  class   Class   @relation(fields: [classId], references: [id])
+
+  @@map("attendance")
+}
+
+model Assignment {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  classId     String
+  subject     String
+  dueDate     DateTime @db.Date
+  totalPoints Int?     @default(100)
+  status      String?  @default("active")
+  createdAt   DateTime @default(now())
+
+  class       Class                  @relation(fields: [classId], references: [id])
+  submissions AssignmentSubmission[]
+
+  @@map("assignments")
+}
+
+model Schedule {
+  id        String  @id @default(uuid())
+  classId   String
+  subject   String
+  dayOfWeek Int
+  startTime String
+  endTime   String
+  room      String?
+  teacherId String?
+
+  class   Class @relation(fields: [classId], references: [id])
+  teacher User? @relation(fields: [teacherId], references: [id])
+
+  @@map("schedules")
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  senderId    String
+  recipientId String
+  subject     String
+  content     String
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  sender    User @relation("SentMessages", fields: [senderId], references: [id])
+  recipient User @relation("ReceivedMessages", fields: [recipientId], references: [id])
+
+  @@map("messages")
+}
+
+model SchoolNews {
+  id          String   @id @default(uuid())
+  title       String
+  content     String
+  category    String?  @default("general")
+  authorId    String?
+  publishedAt DateTime @default(now())
+  isPublished Boolean  @default(true)
+
+  author User? @relation(fields: [authorId], references: [id])
+
+  @@map("school_news")
+}
+
+model SchoolActivity {
+  id           String   @id @default(uuid())
+  title        String
+  description  String?
+  activityDate DateTime @db.Date
+  startTime    String?
+  endTime      String?
+  location     String?
+  category     String?  @default("event")
+  createdAt    DateTime @default(now())
+
+  @@map("school_activities")
+}
+
+model Report {
+  id          String   @id @default(uuid())
+  title       String
+  type        String
+  data        Json?
+  generatedBy String?
+  createdAt   DateTime @default(now())
+
+  generator User? @relation(fields: [generatedBy], references: [id])
+
+  @@map("reports")
+}
+
+model LessonPlan {
+  id         String   @id @default(uuid())
+  classId    String
+  teacherId  String?
+  subject    String
+  topic      String
+  objectives String?
+  materials  String?
+  lessonDate DateTime @db.Date
+  duration   Int?
+  status     String?  @default("draft")
+  createdAt  DateTime @default(now())
+
+  class   Class @relation(fields: [classId], references: [id])
+  teacher User? @relation(fields: [teacherId], references: [id])
+
+  @@map("lesson_plans")
+}
+
+model ExamResult {
+  id        String   @id @default(uuid())
+  examId    String
+  studentId String
+  score     Int
+  grade     String?
+  feedback  String?
+  gradedAt  DateTime @default(now())
+
+  exam    Exam    @relation(fields: [examId], references: [id])
+  student Student @relation(fields: [studentId], references: [id])
+
+  @@map("exam_results")
+}
+
+model AssignmentSubmission {
+  id             String   @id @default(uuid())
+  assignmentId   String
+  studentId      String
+  submissionDate DateTime @default(now())
+  content        String?
+  fileUrl        String?
+  grade          Int?
+  feedback       String?
+  status         String?  @default("submitted") // submitted, graded, late
+
+  assignment Assignment @relation(fields: [assignmentId], references: [id])
+  student    Student    @relation(fields: [studentId], references: [id])
+
+  @@map("assignment_submissions")
+}
