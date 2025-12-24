@@ -1,16 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import StudentGradesClient from "./client";
+import { getStudentGrades } from "@/server/grades";
 
-export default function GradesPage() {
-    return (
-        <div className="p-6">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Grades</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">This feature is currently under development.</p>
-                </CardContent>
-            </Card>
-        </div>
-    );
+export default async function GradesPage() {
+    const response = await getStudentGrades();
+    const data = response.success ? response.data : { examResults: [], assignmentSubmissions: [] };
+
+    return <StudentGradesClient data={data as any} />;
 }

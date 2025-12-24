@@ -1,16 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import StudentActivitiesClient from "./client";
+import { getSchoolActivities } from "@/server/activities";
 
-export default function ActivitiesPage() {
-    return (
-        <div className="p-6">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Activities</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">This feature is currently under development.</p>
-                </CardContent>
-            </Card>
-        </div>
-    );
+export default async function ActivitiesPage() {
+    const response = await getSchoolActivities();
+    const activities = response.success ? response.data : [];
+
+    return <StudentActivitiesClient initialActivities={activities as any} />;
 }

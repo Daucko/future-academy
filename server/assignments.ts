@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+import { auth } from "@/auth";
 
 const assignmentSchema = z.object({
     title: z.string().min(1),
@@ -24,6 +25,39 @@ export async function getAssignments(classId?: string) {
         });
         return { success: true, data: assignments };
     } catch (error) {
+        return { success: false, error: "Failed to fetch assignments" };
+    }
+}
+
+export async function getStudentAssignments() {
+    try {
+        const session = await auth();
+        if (!session?.user?.email) {
+            return { success: false, error: "Not authenticated" };
+        }
+
+        const student = await prisma.student.findFirst({
+            where: { email: session.user.email },
+            select: { id: true, classId: true }
+        });
+
+        if (!student || !student.classId) {
+            return { success: true, data: [] };
+        }
+
+        const assignments = await prisma.assignment.findMany({
+            where: { classId: student.classId },
+            include: {
+                submissions: {
+                    where: { studentId: student.id }
+                }
+            },
+            orderBy: { dueDate: 'asc' }
+        });
+
+        return { success: true, data: assignments };
+    } catch (error) {
+        console.error("Error fetching student assignments:", error);
         return { success: false, error: "Failed to fetch assignments" };
     }
 }

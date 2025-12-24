@@ -1,16 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import StudentExamsClient from "./client";
+import { getStudentExams } from "@/server/exams";
 
-export default function ExamsPage() {
-    return (
-        <div className="p-6">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Exams</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">This feature is currently under development.</p>
-                </CardContent>
-            </Card>
-        </div>
-    );
+export default async function ExamsPage() {
+    const response = await getStudentExams();
+    const exams = response.success ? response.data : [];
+
+    return <StudentExamsClient initialExams={exams as any} />;
 }
