@@ -73,11 +73,29 @@ model Student {
   @@map("students")
 }
 
+model Course {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  name        String
+  description String?
+  credits     Int?     @default(3)
+  color       String?  @default("blue")
+  createdAt   DateTime @default(now())
+
+  exams       Exam[]
+  assignments Assignment[]
+  schedules   Schedule[]
+  lessonPlans LessonPlan[]
+
+  @@map("courses")
+}
+
 model Exam {
   id           String   @id @default(uuid())
   classId      String
+  courseId     String?
   examType     String
-  subject      String
+  subject      String?
   examDate     DateTime @db.Date
   startTime    String
   endTime      String?
@@ -88,6 +106,7 @@ model Exam {
   createdAt    DateTime @default(now())
 
   class   Class        @relation(fields: [classId], references: [id])
+  course  Course?      @relation(fields: [courseId], references: [id])
   results ExamResult[]
 
   @@map("exams")
@@ -114,13 +133,15 @@ model Assignment {
   title       String
   description String?
   classId     String
-  subject     String
+  courseId    String?
+  subject     String?
   dueDate     DateTime @db.Date
   totalPoints Int?     @default(100)
   status      String?  @default("active")
   createdAt   DateTime @default(now())
 
   class       Class                  @relation(fields: [classId], references: [id])
+  course      Course?                @relation(fields: [courseId], references: [id])
   submissions AssignmentSubmission[]
 
   @@map("assignments")
@@ -129,15 +150,17 @@ model Assignment {
 model Schedule {
   id        String  @id @default(uuid())
   classId   String
-  subject   String
+  courseId  String?
+  subject   String?
   dayOfWeek Int
   startTime String
   endTime   String
   room      String?
   teacherId String?
 
-  class   Class @relation(fields: [classId], references: [id])
-  teacher User? @relation(fields: [teacherId], references: [id])
+  class   Class   @relation(fields: [classId], references: [id])
+  course  Course? @relation(fields: [courseId], references: [id])
+  teacher User?   @relation(fields: [teacherId], references: [id])
 
   @@map("schedules")
 }
@@ -202,7 +225,8 @@ model LessonPlan {
   id         String   @id @default(uuid())
   classId    String
   teacherId  String?
-  subject    String
+  courseId   String?
+  subject    String?
   topic      String
   objectives String?
   materials  String?
@@ -211,8 +235,9 @@ model LessonPlan {
   status     String?  @default("draft")
   createdAt  DateTime @default(now())
 
-  class   Class @relation(fields: [classId], references: [id])
-  teacher User? @relation(fields: [teacherId], references: [id])
+  class   Class   @relation(fields: [classId], references: [id])
+  course  Course? @relation(fields: [courseId], references: [id])
+  teacher User?   @relation(fields: [teacherId], references: [id])
 
   @@map("lesson_plans")
 }

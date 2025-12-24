@@ -17,6 +17,7 @@ interface Exam {
     id: string;
     classId: string;
     subject: string;
+    course?: { name: string; code: string; color?: string | null } | null;
     examType: string;
     examDate: Date | string;
     startTime: string;
@@ -84,7 +85,9 @@ export default function StudentExamsClient({ initialExams }: { initialExams: Exa
                                                 )}
                                             </div>
 
-                                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{exam.subject}</h3>
+                                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                                                {exam.course?.name || exam.subject}
+                                            </h3>
                                             <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">{exam.examType}</p>
 
                                             <div className="space-y-3">

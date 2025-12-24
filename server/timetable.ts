@@ -24,21 +24,21 @@ export async function getTimetableData() {
         const schedules = await prisma.schedule.findMany({
             where: { classId: student.classId },
             include: {
-                teacher: {
-                    select: {
-                        fullName: true
-                    }
-                }
+                course: true,
+                teacher: true
             },
-            orderBy: { startTime: 'asc' }
+            orderBy: [
+                { dayOfWeek: 'asc' },
+                { startTime: 'asc' }
+            ]
         });
 
         // Map database schedules to the format expected by the frontend
         return schedules.map((s: any) => ({
             time: s.startTime,
             endTime: s.endTime,
-            status: "upcoming", // This would ideally be calculated based on current time
-            title: s.subject,
+            status: "upcoming",
+            title: s.course?.name || s.subject || "TBA",
             teacher: s.teacher?.fullName || "TBA",
             room: s.room || "TBA",
             type: "class",

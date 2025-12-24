@@ -23,7 +23,7 @@ export async function getExams(classId?: string) {
         const where = classId ? { classId } : {};
         const exams = await prisma.exam.findMany({
             where,
-            include: { class: true },
+            include: { class: true, course: true },
             orderBy: { examDate: 'desc' }
         });
         return { success: true, data: exams };
@@ -50,7 +50,7 @@ export async function getStudentExams() {
 
         const exams = await prisma.exam.findMany({
             where: { classId: student.classId },
-            include: { class: true },
+            include: { class: true, course: true },
             orderBy: { examDate: 'asc' }
         });
 

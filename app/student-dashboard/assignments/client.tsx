@@ -21,6 +21,7 @@ interface Assignment {
     title: string;
     description?: string | null;
     subject: string;
+    course?: { name: string; code: string; color?: string | null } | null;
     dueDate: Date | string;
     totalPoints?: number | null;
     status: string;
@@ -120,7 +121,7 @@ export default function StudentAssignmentsClient({ initialAssignments }: { initi
                                                 <div className="space-y-1">
                                                     <div className="flex items-center gap-2">
                                                         <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
-                                                            {assignment.subject}
+                                                            {assignment.course?.name || assignment.subject}
                                                         </span>
                                                         {getStatusBadge(assignment.displayStatus)}
                                                     </div>

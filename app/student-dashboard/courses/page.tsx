@@ -1,16 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import StudentCoursesClient from "./client";
+import { getStudentCourses } from "@/server/courses";
 
-export default function CoursesPage() {
-    return (
-        <div className="p-6">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Courses</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">This feature is currently under development.</p>
-                </CardContent>
-            </Card>
-        </div>
-    );
+export default async function CoursesPage() {
+    const response = await getStudentCourses();
+    const courses = response.success ? response.data : [];
+
+    return <StudentCoursesClient initialCourses={courses as any} />;
 }

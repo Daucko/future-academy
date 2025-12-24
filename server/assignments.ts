@@ -20,7 +20,7 @@ export async function getAssignments(classId?: string) {
         const where = classId ? { classId } : {};
         const assignments = await prisma.assignment.findMany({
             where,
-            include: { class: true },
+            include: { class: true, course: true },
             orderBy: { dueDate: 'desc' }
         });
         return { success: true, data: assignments };
@@ -48,6 +48,7 @@ export async function getStudentAssignments() {
         const assignments = await prisma.assignment.findMany({
             where: { classId: student.classId },
             include: {
+                course: true,
                 submissions: {
                     where: { studentId: student.id }
                 }

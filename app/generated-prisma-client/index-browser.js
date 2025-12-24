@@ -159,9 +159,20 @@ exports.Prisma.StudentScalarFieldEnum = {
   enrolledAt: 'enrolledAt'
 };
 
+exports.Prisma.CourseScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  description: 'description',
+  credits: 'credits',
+  color: 'color',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.ExamScalarFieldEnum = {
   id: 'id',
   classId: 'classId',
+  courseId: 'courseId',
   examType: 'examType',
   subject: 'subject',
   examDate: 'examDate',
@@ -190,6 +201,7 @@ exports.Prisma.AssignmentScalarFieldEnum = {
   title: 'title',
   description: 'description',
   classId: 'classId',
+  courseId: 'courseId',
   subject: 'subject',
   dueDate: 'dueDate',
   totalPoints: 'totalPoints',
@@ -200,6 +212,7 @@ exports.Prisma.AssignmentScalarFieldEnum = {
 exports.Prisma.ScheduleScalarFieldEnum = {
   id: 'id',
   classId: 'classId',
+  courseId: 'courseId',
   subject: 'subject',
   dayOfWeek: 'dayOfWeek',
   startTime: 'startTime',
@@ -253,6 +266,7 @@ exports.Prisma.LessonPlanScalarFieldEnum = {
   id: 'id',
   classId: 'classId',
   teacherId: 'teacherId',
+  courseId: 'courseId',
   subject: 'subject',
   topic: 'topic',
   objectives: 'objectives',
@@ -316,6 +330,7 @@ exports.Prisma.ModelName = {
   User: 'User',
   Class: 'Class',
   Student: 'Student',
+  Course: 'Course',
   Exam: 'Exam',
   Attendance: 'Attendance',
   Assignment: 'Assignment',
