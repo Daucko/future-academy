@@ -1,38 +1,5 @@
 {
-  "node": {
-    "402b41b296bfc6c800be92bd608169e475dda82a28": {
-      "workers": {
-        "app/signin/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cauth.ts%22%2C%5B%5B%22402b41b296bfc6c800be92bd608169e475dda82a28%22%2C%22signUp%22%5D%2C%5B%2240a9e432530a6b2c7cbc97f7a86867cfd8b0cd0391%22%2C%22login%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/signup/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cauth.ts%22%2C%5B%5B%22402b41b296bfc6c800be92bd608169e475dda82a28%22%2C%22signUp%22%5D%2C%5B%2240a9e432530a6b2c7cbc97f7a86867cfd8b0cd0391%22%2C%22login%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/signin/page": "action-browser",
-        "app/signup/page": "action-browser"
-      }
-    },
-    "40a9e432530a6b2c7cbc97f7a86867cfd8b0cd0391": {
-      "workers": {
-        "app/signin/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cauth.ts%22%2C%5B%5B%22402b41b296bfc6c800be92bd608169e475dda82a28%22%2C%22signUp%22%5D%2C%5B%2240a9e432530a6b2c7cbc97f7a86867cfd8b0cd0391%22%2C%22login%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/signup/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cauth.ts%22%2C%5B%5B%22402b41b296bfc6c800be92bd608169e475dda82a28%22%2C%22signUp%22%5D%2C%5B%2240a9e432530a6b2c7cbc97f7a86867cfd8b0cd0391%22%2C%22login%22%5D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/signin/page": "action-browser",
-        "app/signup/page": "action-browser"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
   "encryptionKey": "7R7BnYhFwMTasWbEObasU2VVe0VmEj83WUo2nCe/dEU="
 }

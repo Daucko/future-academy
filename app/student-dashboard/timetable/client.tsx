@@ -91,6 +91,9 @@ export default function TimetableClient({ initialData }: { initialData: any }) {
     const [currentDate, setCurrentDate] = useState("");
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
+    // Use initialData if available, otherwise fall back to hardcoded items
+    const displayItems = initialData && initialData.length > 0 ? initialData : timetableItems;
+
     useEffect(() => {
         const now = new Date();
         setCurrentDate(now.toLocaleDateString('en-US', {
@@ -264,7 +267,7 @@ export default function TimetableClient({ initialData }: { initialData: any }) {
 
                                 <CardContent className="p-6">
                                     <div className="grid grid-cols-[70px_32px_1fr] md:grid-cols-[90px_40px_1fr] gap-y-0">
-                                        {timetableItems.map((item, index) => (
+                                        {displayItems.map((item: any, index: number) => (
                                             <div key={index} className="contents">
                                                 {/* Time Column */}
                                                 <div className="text-right pt-4 pr-3">
