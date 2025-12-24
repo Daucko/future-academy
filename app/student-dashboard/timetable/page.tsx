@@ -1,16 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import TimetableClient from "./client";
+import { getTimetableData } from "@/server/timetable";
 
-export default function TimetablePage() {
-    return (
-        <div className="p-6">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Timetable</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground">This feature is currently under development.</p>
-                </CardContent>
-            </Card>
-        </div>
-    );
+export default async function TimetablePage() {
+    const timetableData = await getTimetableData();
+    return <TimetableClient initialData={timetableData} />;
 }
