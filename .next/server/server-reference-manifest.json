@@ -1,5 +1,72 @@
 {
-  "node": {},
+  "node": {
+    "0048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "00f7fe0924cac91ef665d80fbb106a2966b08ec49d": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "40309925fec968945989d251c970046d3f470f6287": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "4064c889f2fdc7db2bb9f81d9b978aac84c466ef12": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "603e1d84f47c279bbaf6e415d5c2e4063b41bb913e": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "008b5537891dc04a0ec6526811028edd78a399e38e": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cseed-utility.ts%22%2C%5B%5B%22008b5537891dc04a0ec6526811028edd78a399e38e%22%2C%22seedCoursesAndLinkData%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
   "encryptionKey": "7R7BnYhFwMTasWbEObasU2VVe0VmEj83WUo2nCe/dEU="
 }
