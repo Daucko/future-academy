@@ -27,14 +27,14 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const navItems = [
-    { name: "Overview", href: "/student-dashboard", icon: LayoutDashboard },
-    { name: "Courses", href: "/student-dashboard/courses", icon: BookOpen },
-    { name: "Timetable", href: "/student-dashboard/timetable", icon: Calendar },
-    { name: "Exams", href: "/student-dashboard/exams", icon: ClipboardList },
-    { name: "Assignments", href: "/student-dashboard/assignments", icon: FileText },
-    { name: "Messages", href: "/student-dashboard/messages", icon: Mail, badge: 2 },
-    { name: "Grades", href: "/student-dashboard/grades", icon: TrendingUp },
-    { name: "Activities", href: "/student-dashboard/activities", icon: Users },
+    { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
+    { name: "Courses", href: "/dashboard/courses", icon: BookOpen },
+    { name: "Timetable", href: "/dashboard/timetable", icon: Calendar },
+    { name: "Exams", href: "/dashboard/exams", icon: ClipboardList },
+    { name: "Assignments", href: "/dashboard/assignments", icon: FileText },
+    { name: "Messages", href: "/dashboard/messages", icon: Mail, badge: 2 },
+    { name: "Grades", href: "/dashboard/grades", icon: TrendingUp },
+    { name: "Activities", href: "/dashboard/activities", icon: Users },
 ];
 
 export default function DashboardLayout({
@@ -125,7 +125,7 @@ export default function DashboardLayout({
                         </div>
 
                         <Link
-                            href="/student-dashboard/activities"
+                            href="/dashboard/activities"
                             className="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                         >
                             <Users className="h-5 w-5" />
@@ -136,7 +136,7 @@ export default function DashboardLayout({
                     {/* Profile Section */}
                     <div className="p-4 border-t border-gray-200 dark:border-gray-800">
                         <Link
-                            href="/student-dashboard/settings"
+                            href="/dashboard/settings"
                             className="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors mb-2"
                         >
                             <Settings className="h-5 w-5" />

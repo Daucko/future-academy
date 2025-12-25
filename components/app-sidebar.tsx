@@ -38,22 +38,22 @@ import {
 } from "@/components/ui/sidebar";
 
 const mainMenuItems = [
-  { title: "Overview", url: "/teacher-dashboard", icon: LayoutDashboard },
-  { title: "Class Preparation", url: "/teacher-dashboard/class-preparation", icon: BookOpen },
-  { title: "Attendance", url: "/teacher-dashboard/attendance", icon: UserCheck },
-  { title: "Exams", url: "/teacher-dashboard/exams", icon: ClipboardList },
-  { title: "Assignment management", url: "/teacher-dashboard/assignments", icon: FileText },
-  { title: "Schedule", url: "/teacher-dashboard/schedule", icon: Calendar },
-  { title: "Students", url: "/teacher-dashboard/students", icon: Users },
-  { title: "Messages", url: "/teacher-dashboard/messages", icon: MessageSquare, badge: 2 },
-  { title: "Analytics", url: "/teacher-dashboard/analytics", icon: BarChart3 },
-  { title: "Reports", url: "/teacher-dashboard/reports", icon: FileBarChart },
+  { title: "Overview", url: "/dashboard", icon: LayoutDashboard },
+  { title: "Class Preparation", url: "/dashboard/class-preparation", icon: BookOpen },
+  { title: "Attendance", url: "/dashboard/attendance", icon: UserCheck },
+  { title: "Exams", url: "/dashboard/exams", icon: ClipboardList },
+  { title: "Assignment management", url: "/dashboard/assignments", icon: FileText },
+  { title: "Schedule", url: "/dashboard/schedule", icon: Calendar },
+  { title: "Students", url: "/dashboard/students", icon: Users },
+  { title: "Messages", url: "/dashboard/messages", icon: MessageSquare, badge: 2 },
+  { title: "Analytics", url: "/dashboard/analytics", icon: BarChart3 },
+  { title: "Reports", url: "/dashboard/reports", icon: FileBarChart },
 ];
 
 const settingsMenuItems = [
-  { title: "School News", url: "/teacher-dashboard/news", icon: Newspaper },
-  { title: "School Activities", url: "/teacher-dashboard/activities", icon: PartyPopper },
-  { title: "What's New", url: "/teacher-dashboard/whats-new", icon: Sparkles },
+  { title: "School News", url: "/dashboard/news", icon: Newspaper },
+  { title: "School Activities", url: "/dashboard/activities", icon: PartyPopper },
+  { title: "What's New", url: "/dashboard/whats-new", icon: Sparkles },
 ];
 
 export function AppSidebar() {
@@ -151,9 +151,9 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
-                  isActive={pathname === "/teacher-dashboard/settings"}
+                  isActive={pathname === "/dashboard/settings"}
                 >
-                  <Link href="/teacher-dashboard/settings" data-testid="link-settings">
+                  <Link href="/dashboard/settings" data-testid="link-settings">
                     <Settings className="h-4 w-4" />
                     <span>Settings</span>
                   </Link>

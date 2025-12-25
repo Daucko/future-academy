@@ -1,19 +1,14 @@
 import { auth } from "@/auth";
-import { redirect } from "next/navigation";
+import StudentOverview from "./(student-dashboard)/page";
+import TeacherOverview from "./(teacher-dashboard)/page";
 
-export default async function DashboardRedirect() {
+export default async function DashboardPage() {
     const session = await auth();
-
-    if (!session?.user) {
-        redirect("/signin");
-    }
-
-    const role = (session.user as any).role;
+    const role = (session?.user as any)?.role;
 
     if (role === "STUDENT") {
-        redirect("/student-dashboard");
-    } else {
-        // Default to teacher dashboard for teachers and admins
-        redirect("/teacher-dashboard");
+        return <StudentOverview />;
     }
+
+    return <TeacherOverview />;
 }
