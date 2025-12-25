@@ -4,7 +4,7 @@ import TeacherExams from "../(teacher-dashboard)/_exams/page";
 
 export default async function ExamsDispatcher() {
     const session = await auth();
-    const role = (session?.user as any)?.role;
+    const role = (session?.user as any)?.role?.toUpperCase();
 
     if (role === "STUDENT") {
         return <StudentExams />;

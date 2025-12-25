@@ -41,7 +41,7 @@ export async function signUp(formData: z.infer<typeof signUpSchema>) {
                 email,
                 username,
                 password: hashedPassword,
-                role: role.toLowerCase(),
+                role: role.toUpperCase(),
             },
         });
 

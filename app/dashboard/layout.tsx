@@ -8,7 +8,7 @@ export default async function UnifiedDashboardLayout({
     children: React.ReactNode;
 }) {
     const session = await auth();
-    const role = (session?.user as any)?.role;
+    const role = (session?.user as any)?.role?.toUpperCase();
 
     if (role === "STUDENT") {
         return <StudentLayout>{children}</StudentLayout>;

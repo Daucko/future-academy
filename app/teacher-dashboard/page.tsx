@@ -8,7 +8,7 @@ export default async function DashboardRedirect() {
         redirect("/signin");
     }
 
-    const role = (session.user as any).role;
+    const role = (session.user as any).role?.toUpperCase();
 
     if (role === "STUDENT") {
         redirect("/student-dashboard");
