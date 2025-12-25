@@ -20,7 +20,8 @@ import {
     X,
     School,
     Bookmark,
-    CalendarDays
+    CalendarDays,
+    GraduationCap
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -69,10 +70,10 @@ export default function DashboardLayout({
           flex flex-col h-screen
         `}>
                     {/* Logo */}
-                    <div className="p-6 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+                    <div className="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-gray-900 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <School className="h-6 w-6 text-white" />
+                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                                <GraduationCap className="h-5 w-5" />
                             </div>
                             <span className="font-bold text-gray-900 dark:text-white text-lg">EduSchool</span>
                         </div>
