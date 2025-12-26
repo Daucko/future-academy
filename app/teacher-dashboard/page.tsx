@@ -1,19 +1,19 @@
-import { auth } from "@/auth";
-import { redirect } from "next/navigation";
+import { auth } from '@/auth';
+import { redirect } from 'next/navigation';
 
 export default async function DashboardRedirect() {
-    const session = await auth();
+  const session = await auth();
 
-    if (!session?.user) {
-        redirect("/signin");
-    }
+  if (!session?.user) {
+    redirect('/signin');
+  }
 
-    const role = (session.user as any).role?.toUpperCase();
+  const role = (session.user as any).role?.toUpperCase();
 
-    if (role === "STUDENT") {
-        redirect("/student-dashboard");
-    } else {
-        // Default to teacher dashboard for teachers and admins
-        redirect("/teacher-dashboard");
-    }
+  if (role === 'STUDENT') {
+    redirect('/dashboard');
+  } else {
+    // Default to teacher dashboard for teachers and admins
+    redirect('/teacher-dashboard');
+  }
 }
