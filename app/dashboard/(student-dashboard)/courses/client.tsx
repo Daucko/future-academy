@@ -159,7 +159,7 @@ export default function StudentCoursesClient({ initialCourses }: { initialCourse
             ) : (
                 <div className="py-24 text-center bg-gray-50/50 dark:bg-gray-900/20 rounded-[2rem] border-2 border-dashed border-gray-200 dark:border-gray-800 shadow-inner">
                     <div className="w-20 h-20 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl rotate-3 group-hover:rotate-0 transition-transform">
-                        <BookOpen className="h-10 w-10 text-blue-500" />
+                        <BookOpen className="h-10 w-10 text-primary" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Build Your Academic Registry</h3>
                     <p className="text-gray-500 max-w-sm mx-auto mb-10 leading-relaxed">
@@ -169,7 +169,7 @@ export default function StudentCoursesClient({ initialCourses }: { initialCourse
                         size="lg"
                         onClick={handleSeed}
                         disabled={isSeeding}
-                        className="gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 rounded-2xl shadow-xl shadow-blue-500/20 active:scale-95 transition-all"
+                        className="gap-3 bg-primary text-primary-foreground px-8 h-14 rounded-2xl shadow-xl shadow-blue-500/20 active:scale-95 transition-all"
                     >
                         {isSeeding ? <Clock className="h-5 w-5 animate-spin" /> : <Database className="h-5 w-5" />}
                         <span className="font-bold uppercase tracking-widest text-xs">
