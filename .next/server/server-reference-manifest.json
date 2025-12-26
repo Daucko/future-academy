@@ -10,6 +10,193 @@
       "layer": {
         "app/dashboard/(student-dashboard)/timetable/page": "rsc"
       }
+    },
+    "00701fe4b6479b9a8059ddfa693410206f594f776d": {
+      "workers": {
+        "app/dashboard/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cexams.ts%22%2C%5B%5B%2200701fe4b6479b9a8059ddfa693410206f594f776d%22%2C%22getStudentExams%22%5D%2C%5B%22403b5a10452069aabce543237ba69a2dd8b09c79c7%22%2C%22deleteExam%22%5D%2C%5B%2240dc9f4982429c471c1c51d61d03827625d78375a1%22%2C%22createExam%22%5D%2C%5B%2240faa118a59cbd90c62c507a94035d64cfdebc5243%22%2C%22getExams%22%5D%2C%5B%226019d905c78e9680ae7fde39444d225ed26b37a524%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/exams/page": "rsc"
+      }
+    },
+    "403b5a10452069aabce543237ba69a2dd8b09c79c7": {
+      "workers": {
+        "app/dashboard/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cexams.ts%22%2C%5B%5B%2200701fe4b6479b9a8059ddfa693410206f594f776d%22%2C%22getStudentExams%22%5D%2C%5B%22403b5a10452069aabce543237ba69a2dd8b09c79c7%22%2C%22deleteExam%22%5D%2C%5B%2240dc9f4982429c471c1c51d61d03827625d78375a1%22%2C%22createExam%22%5D%2C%5B%2240faa118a59cbd90c62c507a94035d64cfdebc5243%22%2C%22getExams%22%5D%2C%5B%226019d905c78e9680ae7fde39444d225ed26b37a524%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/exams/page": "rsc"
+      }
+    },
+    "40dc9f4982429c471c1c51d61d03827625d78375a1": {
+      "workers": {
+        "app/dashboard/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cexams.ts%22%2C%5B%5B%2200701fe4b6479b9a8059ddfa693410206f594f776d%22%2C%22getStudentExams%22%5D%2C%5B%22403b5a10452069aabce543237ba69a2dd8b09c79c7%22%2C%22deleteExam%22%5D%2C%5B%2240dc9f4982429c471c1c51d61d03827625d78375a1%22%2C%22createExam%22%5D%2C%5B%2240faa118a59cbd90c62c507a94035d64cfdebc5243%22%2C%22getExams%22%5D%2C%5B%226019d905c78e9680ae7fde39444d225ed26b37a524%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/exams/page": "rsc"
+      }
+    },
+    "40faa118a59cbd90c62c507a94035d64cfdebc5243": {
+      "workers": {
+        "app/dashboard/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cexams.ts%22%2C%5B%5B%2200701fe4b6479b9a8059ddfa693410206f594f776d%22%2C%22getStudentExams%22%5D%2C%5B%22403b5a10452069aabce543237ba69a2dd8b09c79c7%22%2C%22deleteExam%22%5D%2C%5B%2240dc9f4982429c471c1c51d61d03827625d78375a1%22%2C%22createExam%22%5D%2C%5B%2240faa118a59cbd90c62c507a94035d64cfdebc5243%22%2C%22getExams%22%5D%2C%5B%226019d905c78e9680ae7fde39444d225ed26b37a524%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/exams/page": "rsc"
+      }
+    },
+    "6019d905c78e9680ae7fde39444d225ed26b37a524": {
+      "workers": {
+        "app/dashboard/exams/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cexams.ts%22%2C%5B%5B%2200701fe4b6479b9a8059ddfa693410206f594f776d%22%2C%22getStudentExams%22%5D%2C%5B%22403b5a10452069aabce543237ba69a2dd8b09c79c7%22%2C%22deleteExam%22%5D%2C%5B%2240dc9f4982429c471c1c51d61d03827625d78375a1%22%2C%22createExam%22%5D%2C%5B%2240faa118a59cbd90c62c507a94035d64cfdebc5243%22%2C%22getExams%22%5D%2C%5B%226019d905c78e9680ae7fde39444d225ed26b37a524%22%2C%22updateExam%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/exams/page": "rsc"
+      }
+    },
+    "0048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "00f7fe0924cac91ef665d80fbb106a2966b08ec49d": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "40309925fec968945989d251c970046d3f470f6287": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "4064c889f2fdc7db2bb9f81d9b978aac84c466ef12": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "603e1d84f47c279bbaf6e415d5c2e4063b41bb913e": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Ccourses.ts%22%2C%5B%5B%220048c0cd1276ab9aebf8c4f1170d68d6b8e4beaf1f%22%2C%22getCourses%22%5D%2C%5B%2200f7fe0924cac91ef665d80fbb106a2966b08ec49d%22%2C%22getStudentCourses%22%5D%2C%5B%2240309925fec968945989d251c970046d3f470f6287%22%2C%22deleteCourse%22%5D%2C%5B%224064c889f2fdc7db2bb9f81d9b978aac84c466ef12%22%2C%22createCourse%22%5D%2C%5B%22603e1d84f47c279bbaf6e415d5c2e4063b41bb913e%22%2C%22updateCourse%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "rsc"
+      }
+    },
+    "008b5537891dc04a0ec6526811028edd78a399e38e": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/courses/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cseed-utility.ts%22%2C%5B%5B%22008b5537891dc04a0ec6526811028edd78a399e38e%22%2C%22seedCoursesAndLinkData%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/courses/page": "action-browser"
+      }
+    },
+    "00a9a4151ec781f1454f983ac55f81112fbe85fd02": {
+      "workers": {
+        "app/dashboard/assignments/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cassignments.ts%22%2C%5B%5B%2200a9a4151ec781f1454f983ac55f81112fbe85fd02%22%2C%22getStudentAssignments%22%5D%2C%5B%22406471c41e52e4bf2e4e47274aa6d353b8747e485f%22%2C%22deleteAssignment%22%5D%2C%5B%224080411487d454bba10098a1fb144f5401159b67fe%22%2C%22getAssignments%22%5D%2C%5B%2240e80598a1b0bcbf1b804c8cda8e7ba26de5a11c7d%22%2C%22createAssignment%22%5D%2C%5B%226098d62713baddf1bf74380ccac6544cce458d398c%22%2C%22updateAssignment%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/assignments/page": "rsc"
+      }
+    },
+    "406471c41e52e4bf2e4e47274aa6d353b8747e485f": {
+      "workers": {
+        "app/dashboard/assignments/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cassignments.ts%22%2C%5B%5B%2200a9a4151ec781f1454f983ac55f81112fbe85fd02%22%2C%22getStudentAssignments%22%5D%2C%5B%22406471c41e52e4bf2e4e47274aa6d353b8747e485f%22%2C%22deleteAssignment%22%5D%2C%5B%224080411487d454bba10098a1fb144f5401159b67fe%22%2C%22getAssignments%22%5D%2C%5B%2240e80598a1b0bcbf1b804c8cda8e7ba26de5a11c7d%22%2C%22createAssignment%22%5D%2C%5B%226098d62713baddf1bf74380ccac6544cce458d398c%22%2C%22updateAssignment%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/assignments/page": "rsc"
+      }
+    },
+    "4080411487d454bba10098a1fb144f5401159b67fe": {
+      "workers": {
+        "app/dashboard/assignments/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cassignments.ts%22%2C%5B%5B%2200a9a4151ec781f1454f983ac55f81112fbe85fd02%22%2C%22getStudentAssignments%22%5D%2C%5B%22406471c41e52e4bf2e4e47274aa6d353b8747e485f%22%2C%22deleteAssignment%22%5D%2C%5B%224080411487d454bba10098a1fb144f5401159b67fe%22%2C%22getAssignments%22%5D%2C%5B%2240e80598a1b0bcbf1b804c8cda8e7ba26de5a11c7d%22%2C%22createAssignment%22%5D%2C%5B%226098d62713baddf1bf74380ccac6544cce458d398c%22%2C%22updateAssignment%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/assignments/page": "rsc"
+      }
+    },
+    "40e80598a1b0bcbf1b804c8cda8e7ba26de5a11c7d": {
+      "workers": {
+        "app/dashboard/assignments/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cassignments.ts%22%2C%5B%5B%2200a9a4151ec781f1454f983ac55f81112fbe85fd02%22%2C%22getStudentAssignments%22%5D%2C%5B%22406471c41e52e4bf2e4e47274aa6d353b8747e485f%22%2C%22deleteAssignment%22%5D%2C%5B%224080411487d454bba10098a1fb144f5401159b67fe%22%2C%22getAssignments%22%5D%2C%5B%2240e80598a1b0bcbf1b804c8cda8e7ba26de5a11c7d%22%2C%22createAssignment%22%5D%2C%5B%226098d62713baddf1bf74380ccac6544cce458d398c%22%2C%22updateAssignment%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/assignments/page": "rsc"
+      }
+    },
+    "6098d62713baddf1bf74380ccac6544cce458d398c": {
+      "workers": {
+        "app/dashboard/assignments/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cassignments.ts%22%2C%5B%5B%2200a9a4151ec781f1454f983ac55f81112fbe85fd02%22%2C%22getStudentAssignments%22%5D%2C%5B%22406471c41e52e4bf2e4e47274aa6d353b8747e485f%22%2C%22deleteAssignment%22%5D%2C%5B%224080411487d454bba10098a1fb144f5401159b67fe%22%2C%22getAssignments%22%5D%2C%5B%2240e80598a1b0bcbf1b804c8cda8e7ba26de5a11c7d%22%2C%22createAssignment%22%5D%2C%5B%226098d62713baddf1bf74380ccac6544cce458d398c%22%2C%22updateAssignment%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/assignments/page": "rsc"
+      }
+    },
+    "008895158319ce4b80b8f33ff0592d0f120a5f26ce": {
+      "workers": {
+        "app/dashboard/(student-dashboard)/grades/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CUSER%5C%5CDesktop%5C%5Cpersonal_project%5C%5CFuture-Academy%5C%5Cserver%5C%5Cgrades.ts%22%2C%5B%5B%22008895158319ce4b80b8f33ff0592d0f120a5f26ce%22%2C%22getStudentGrades%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/(student-dashboard)/grades/page": "rsc"
+      }
     }
   },
   "edge": {},
