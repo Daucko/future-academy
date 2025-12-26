@@ -1,4 +1,4 @@
-export default async function UnifiedDashboardLayout({
+export default async function DashboardLayout({
     children,
 }: {
     children: React.ReactNode;

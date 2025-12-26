@@ -1,31 +1,14 @@
-"use client";
+import { auth } from "@/auth";
+import StudentDashboard from "./(student-dashboard)/student-dashboard";
+import TeacherDashboard from "./(teacher-dashboard)/teacher-dashboard";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+export default async function DashboardPage() {
+    const session = await auth();
+    const role = (session?.user as any)?.role?.toUpperCase();
 
-export default function DashboardPage() {
-    const router = useRouter();
-    const { data: session, status } = useSession();
+    if (role === "STUDENT") {
+        return <StudentDashboard />;
+    }
 
-    useEffect(() => {
-        if (status === "loading") return;
-
-        const role = (session?.user as any)?.role?.toUpperCase();
-
-        if (role === "STUDENT") {
-            router.push("/dashboard/courses");
-        } else {
-            router.push("/dashboard/analytics");
-        }
-    }, [session, status, router]);
-
-    return (
-        <div className="flex items-center justify-center min-h-screen">
-            <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-                <p className="mt-4 text-gray-600">Loading dashboard...</p>
-            </div>
-        </div>
-    );
+    return <TeacherDashboard />;
 }
