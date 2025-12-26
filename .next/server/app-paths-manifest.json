@@ -1,9 +1,6 @@
 {
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/exams/page": "app/dashboard/exams/page.js",
   "/dashboard/assignments/page": "app/dashboard/assignments/page.js",
-  "/dashboard/(student-dashboard)/courses/page": "app/dashboard/(student-dashboard)/courses/page.js",
-  "/dashboard/(student-dashboard)/grades/page": "app/dashboard/(student-dashboard)/grades/page.js",
   "/dashboard/(student-dashboard)/timetable/page": "app/dashboard/(student-dashboard)/timetable/page.js"
 }
