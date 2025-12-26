@@ -1,14 +1,14 @@
 import { auth } from "@/auth";
-import StudentDashboard from "./(student-dashboard)/student-dashboard";
-import TeacherDashboard from "./(teacher-dashboard)/teacher-dashboard";
+import StudentDashboardWithLayout from "./student-dashboard-with-layout";
+import TeacherDashboardWithLayout from "./teacher-dashboard-with-layout";
 
 export default async function DashboardPage() {
     const session = await auth();
     const role = (session?.user as any)?.role?.toUpperCase();
 
     if (role === "STUDENT") {
-        return <StudentDashboard />;
+        return <StudentDashboardWithLayout />;
     }
 
-    return <TeacherDashboard />;
+    return <TeacherDashboardWithLayout />;
 }
